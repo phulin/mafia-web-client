@@ -2,15 +2,16 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
-import StompClientProvider from "./components/StompClientProvider.tsx";
+import { Client } from "./client/Client.ts";
+import ClientContext from "./client/ClientContext.tsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ChakraProvider>
-      <StompClientProvider>
+      <ClientContext.Provider value={new Client()}>
         <App />
-      </StompClientProvider>
+      </ClientContext.Provider>
     </ChakraProvider>
   </StrictMode>
 );

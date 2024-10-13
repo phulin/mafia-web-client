@@ -6,39 +6,21 @@ import {
   Td,
   Tr,
 } from "@chakra-ui/react";
-import { IMessage } from "@stomp/stompjs";
 import { useContext, useEffect, useState } from "react";
-import { StompClientContext } from "./StompClientContext";
-
-interface CharacterSheetMessage {
-  username: string;
-  userId: number;
-  currentLevel: number;
-  ascensionClass: string;
-
-  currentHP: number;
-  maximumHP: number;
-  baseMaxHP: number;
-  currentMP: number;
-  maximumMP: number;
-  baseMaxMP: number;
-
-  adjustedStats: [number, number, number];
-  totalSubpoints: [number, number, number];
-  baseStats: [number, number, number];
-}
+import ClientContext from "../client/ClientContext";
+import { CharacterSheetMessage } from "../client/Message";
 
 export default function CharacterSheet() {
-  const { client } = useContext(StompClientContext);
+  const client = useContext(ClientContext);
+
   const [lastValue, setLastValue] = useState<Partial<CharacterSheetMessage>>(
     {}
   );
 
   useEffect(() => {
-    client?.subscribe("/topic/character", (message: IMessage) => {
-      console.log("message:" + message.body);
-      setLastValue(JSON.parse(message.body));
-    });
+    client.addListener("charsheet", (message: CharacterSheetMessage) =>
+      setLastValue(message)
+    );
   }, [client]);
 
   return (
