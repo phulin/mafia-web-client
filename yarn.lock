@@ -1924,13 +1924,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stomp/stompjs@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@stomp/stompjs@npm:7.0.0"
-  checksum: 10c0/b68d32625efa71d12c57eb5174a83625277da306f9adb044ebf91000c6dec1a433abfd11e44a74d21f7b6fc27490e12997468f0c4f276767ab25c59f7ae93bd4
-  languageName: node
-  linkType: hard
-
 "@swc/core-darwin-arm64@npm:1.7.10":
   version: 1.7.10
   resolution: "@swc/core-darwin-arm64@npm:1.7.10"
@@ -2109,13 +2102,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.3.3":
+"@types/react@npm:*":
   version: 18.3.3
   resolution: "@types/react@npm:18.3.3"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 10c0/fe455f805c5da13b89964c3d68060cebd43e73ec15001a68b34634604a78140e6fc202f3f61679b9d809dde6d7a7c2cb3ed51e0fd1462557911db09879b55114
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.3.11":
+  version: 18.3.11
+  resolution: "@types/react@npm:18.3.11"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/ce80512246ca5bda69db85b9f4f1835189334acfb6b2c4f3eda8cabff1ff1a3ea9ce4f3b895bdbc18c94140aa45592331aa3fdeb557f525c1b048de7ce84fc0e
   languageName: node
   linkType: hard
 
@@ -3546,8 +3549,7 @@ __metadata:
     "@emotion/react": "npm:^11.13.0"
     "@emotion/styled": "npm:^11.13.0"
     "@eslint/js": "npm:^9.8.0"
-    "@stomp/stompjs": "npm:^7.0.0"
-    "@types/react": "npm:^18.3.3"
+    "@types/react": "npm:^18.3.11"
     "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-react-swc": "npm:^3.5.0"
     eslint: "npm:^9.8.0"
